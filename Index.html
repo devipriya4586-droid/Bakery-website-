@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaveri Bakery</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:#FFF8F0;
+}
+
+/* HEADER */
+header{
+  background:#6F4E37;
+  color:white;
+  text-align:center;
+  padding:15px;
+  font-size:24px;
+  font-weight:bold;
+}
+
+/* PAGE */
+.page{
+  display:none;
+  padding:15px;
+  padding-bottom:80px;
+}
+
+.active{
+  display:block;
+}
+
+/* WELCOME */
+#welcome{
+  text-align:center;
+  margin-top:80px;
+}
+
+.logo-img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logo-text{
+  font-size:34px;
+  color:#6F4E37;
+  margin-top:10px;
+  font-weight:bold;
+}
+
+/* CARD */
+.card{
+  background:white;
+  border-radius:15px;
+  padding:10px;
+  margin-bottom:15px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  text-align:center;
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  border-radius:10px;
+  object-fit:cover;
+}
+
+/* BUTTON */
+button{
+  margin:5px;
+  padding:10px 14px;
+  border:none;
+  border-radius:10px;
+  background:#D4A373;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* INPUT */
+input,textarea{
+  width:100%;
+  padding:10px;
+  margin:5px 0;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:white;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  box-shadow:0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar div{
+  text-align:center;
+  font-size:14px;
+  cursor:pointer;
+}
+
+/* TOTAL BOX */
+.total-box{
+  background:white;
+  padding:10px;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+ul{
+  list-style:none;
+  padding:0;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>🍰 Kaveri Bakery</header>
+
+<!-- WELCOME PAGE -->
+<div id="welcome" class="page active">
+
+  <img src="logo.png" class="logo-img">
+
+  <div class="logo-text">
+    Kaveri Bakery
+  </div>
+
+  <h2>Welcome 🎉</h2>
+
+  <p>Fresh Cakes, Puffs, Cookies & Burgers</p>
+
+  <button onclick="showPage('home')">
+    Enter Shop
+  </button>
+
+</div>
+
+<!-- HOME PAGE -->
+<div id="home" class="page">
+
+  <h2>Our Categories 🍽️</h2>
+
+  <!-- CAKES -->
+  <div class="card" onclick="showPage('cakes')">
+    <img src="blueberry-special-cake-37.jpg">
+    <h3>🎂 Cakes</h3>
+    <p>Chocolate, White Forest & more</p>
+  </div>
+
+  <!-- PUFFS -->
+  <div class="card" onclick="showPage('puffs')">
+    <img src="chicken-puff.jpg">
+    <h3>🥟 Puffs</h3>
+    <p>Veg, Chicken & Egg Puff</p>
+  </div>
+
+  <!-- COOKIES -->
+  <div class="card" onclick="showPage('cookies')">
+    <img src="Cc.jpg">
+    <h3>🍪 Cookies</h3>
+    <p>Chocolate & Butter Cookies</p>
+  </div>
+
+  <!-- BURGERS -->
+  <div class="card" onclick="showPage('bread')">
+    <img src="hq720.jpg">
+    <h3>🍔 Burgers</h3>
+    <p>Veg Burger, Chicken Burger</p>
+  </div>
+
+</div>
+
+<!-- CAKES PAGE -->
+<div id="cakes" class="page">
+
+  <h2>🎂 Cakes</h2>
+
+  <!-- CHOCOLATE -->
+  <div class="card">
+
+    <img src="chocolate-cake.jpg">
+
+    <h3>Chocolate Cake</h3>
+
+    <button onclick="addToCart('Chocolate Cake Half Kg',300)">
+      Half Kg ₹300
+    </button>
+
+    <button onclick="addToCart('Chocolate Cake 1 Kg',600)">
+      1 Kg ₹600
+    </button>
+
+  </div>
+
+  <!-- BLACK FOREST -->
+  <div class="card">
+
+    <img src="1.jpg">
+
+    <h3>Black Forest Cake</h3>
+
+    <button onclick="addToCart('Black Forest Half Kg',250)">
+      Half Kg ₹250
+    </button>
+
+    <button onclick="addToCart('Black Forest 1 Kg',580)">
+      1 Kg ₹580
+    </button>
+
+  </div>
+
+  <!-- WHITE FOREST -->
+  <div class="card">
+
+    <img src="WF.jpg">
+
+    <h3>White Forest Cake</h3>
+
+    <button onclick="addToCart('White Forest Half Kg',350)">
+      Half Kg ₹350
+    </button>
+
+    <button onclick="addToCart('White Forest 1 Kg',600)">
+      1 Kg ₹600
+    </button>
+
+  </div>
+
+  <!-- BUTTERSCOTCH -->
+  <div class="card">
+
+    <img src="Butterscotch.jpg">
+
+    <h3>Butterscotch Cake</h3>
+
+    <button onclick="addToCart('Butterscotch Half Kg',340)">
+      Half Kg ₹340
+    </button>
+
+    <button onclick="addToCart('Butterscotch 1 Kg',650)">
+      1 Kg ₹650
+    </button>
+
+  </div>
+
+</div>
+
+<!-- PUFFS PAGE -->
+<div id="puffs" class="page">
+
+  <h2>🥟 Puffs</h2>
+
+  <div class="card">
+
+    <img src="222.jpg">
+
+    <h3>Veg Puff</h3>
+
+    <button onclick="addToCart('Veg Puff',20)">
+      ₹20
+    </button>
+
+  </div>
+
+  <div class="card">
+
+    <img src="chicken-puff.jpg">
+
+    <h3>Chicken Puff</h3>
+
+    <button onclick="addToCart('Chicken Puff',30)">
+      ₹30
+    </button>
+
+  </div>
+
+  <div class="card">
+
+    <img src="egg.png">
+
+    <h3>Egg Puff</h3>
+
+    <button onclick="addToCart('Egg Puff',25)">
+      ₹25
+    </button>
+
+  </div>
+
+</div>
+
+<!-- COOKIES PAGE -->
+<div id="cookies" class="page">
+
+  <h2>🍪 Cookies</h2>
+
+  <div class="card">
+
+    <img src="Iv.webp">
+
+    <h3>Chocolate Cookie</h3>
+
+    <button onclick="addToCart('Chocolate Cookie',45)">
+      ₹45
+    </button>
+
+  </div>
+
+  <div class="card">
+
+    <img src="butter.jpg">
+
+    <h3>Butter Cookie</h3>
+
+    <button onclick="addToCart('Butter Cookie',35)">
+      ₹35
+    </button>
+
+  </div>
+
+</div>
+
+<!-- BURGERS PAGE -->
+<div id="bread" class="page">
+
+  <h2>🍔 Burgers</h2>
+
+  <div class="card">
+
+    <img src="vb.jpg">
+
+    <h3>Veg Burger</h3>
+
+    <button onclick="addToCart('Veg Burger',100)">
+      ₹100
+    </button>
+
+  </div>
+
+  <div class="card">
+
+    <img src="chickenburger.jpg">
+
+    <h3>Chicken Burger</h3>
+
+    <button onclick="addToCart('Chicken Burger',180)">
+      ₹180
+    </button>
+
+  </div>
+
+  <div class="card">
+
+    <img src="00.jpg">
+
+    <h3>Cheese Burger</h3>
+
+    <button onclick="addToCart('Cheese Burger',150)">
+      ₹150
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CART PAGE -->
+<div id="cart" class="page">
+
+  <h2>Your Cart 🛒</h2>
+
+  <ul id="cartItems"></ul>
+
+  <div class="total-box">
+    Total: ₹<span id="total">0</span>
+  </div>
+
+  <button onclick="showPage('details')">
+    Proceed
+  </button>
+
+</div>
+
+<!-- CUSTOMER DETAILS -->
+<div id="details" class="page">
+
+  <h2>Customer Details</h2>
+
+  <input id="name" placeholder="Enter Name">
+
+  <input id="phone" placeholder="Enter Phone Number">
+
+  <textarea id="address" placeholder="Enter Address"></textarea>
+
+  <button onclick="reviewOrder()">
+    Review Order
+  </button>
+
+</div>
+
+<!-- CONFIRM PAGE -->
+<div id="confirm" class="page">
+
+  <h2>Confirm Order</h2>
+
+  <p id="cust"></p>
+
+  <ul id="finalItems"></ul>
+
+  <div class="total-box">
+    Total: ₹<span id="finalTotal"></span>
+  </div>
+
+  <button onclick="sendWhatsApp()">
+    Send to WhatsApp 📲
+  </button>
+
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <div onclick="showPage('home')">
+    🏠<br>Home
+  </div>
+
+  <div onclick="showPage('cart')">
+    🛒<br>Cart
+  </div>
+
+</div>
+
+<script>
+
+let cart = [];
+
+/* PAGE CHANGE */
+function showPage(page){
+
+  document.querySelectorAll('.page')
+  .forEach(p => p.classList.remove('active'));
+
+  document.getElementById(page)
+  .classList.add('active');
+
+  if(page === 'cart'){
+    updateCart();
+  }
+}
+
+/* ADD TO CART */
+function addToCart(item, price){
+
+  cart.push({item, price});
+
+  alert(item + " added");
+}
+
+/* UPDATE CART */
+function updateCart(){
+
+  let list =
+  document.getElementById("cartItems");
+
+  let total = 0;
+
+  list.innerHTML = "";
+
+  cart.forEach((c,index)=>{
+
+    let li =
+    document.createElement("li");
+
+    li.innerHTML =
+    `${c.item} - ₹${c.price}
+    <button onclick="removeItem(${index})">
+    ❌
+    </button>`;
+
+    list.appendChild(li);
+
+    total += c.price;
+  });
+
+  document.getElementById("total")
+  .textContent = total;
+}
+
+/* REMOVE ITEM */
+function removeItem(index){
+
+  cart.splice(index,1);
+
+  updateCart();
+}
+
+/* REVIEW ORDER */
+function reviewOrder(){
+
+  if(!name.value ||
+     !phone.value ||
+     !address.value){
+
+    alert("Fill all details");
+
+    return;
+  }
+
+  cust.innerHTML =
+  `👤 ${name.value}<br>
+   📞 ${phone.value}<br>
+   📍 ${address.value}`;
+
+  let list = finalItems;
+
+  list.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach(c=>{
+
+    let li =
+    document.createElement("li");
+
+    li.textContent =
+    c.item + " - ₹" + c.price;
+
+    list.appendChild(li);
+
+    total += c.price;
+  });
+
+  finalTotal.textContent = total;
+
+  showPage('confirm');
+}
+
+/* WHATSAPP */
+function sendWhatsApp(){
+
+  let msg =
+  "🍰 Kaveri Bakery Order%0A";
+
+  msg +=
+  `Name: ${name.value}%0A
+Phone: ${phone.value}%0A
+Address: ${address.value}%0A%0A`;
+
+  let total = 0;
+
+  cart.forEach(c=>{
+
+    msg +=
+    `${c.item} - ₹${c.price}%0A`;
+
+    total += c.price;
+  });
+
+  msg += `%0ATotal: ₹${total}`;
+
+  let owner =
+  "919367471097";
+
+  window.open(
+  `https://wa.me/${owner}?text=${msg}`
+  );
+
+  cart = [];
+
+  showPage('home');
+}
+
+</script>
+
+</body>
+</html>
